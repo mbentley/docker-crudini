@@ -2,7 +2,7 @@
 
 # check for some basic arguments
 case ${@} in
-  --help|--version)
+  --help|--version|"")
     docker run -t --rm -u "$(id -u):$(id -g)" mbentley/crudini "${@}"
     exit 0
     ;;
