@@ -3,7 +3,7 @@
 # check for some basic arguments
 case ${@} in
   --help|--version|"")
-    docker run -t --rm -u "$(id -u):$(id -g)" mbentley/crudini "${@}"
+    docker run --rm -u "$(id -u):$(id -g)" mbentley/crudini "${@}"
     exit 0
     ;;
 esac
@@ -28,5 +28,5 @@ then
   exit 1
 else
   # try to run the docker command
-  docker run -t --rm -u "$(id -u):$(id -g)" -w /data -v "${CRUDINI_FILE}:${CRUDINI_FILE}" mbentley/crudini "${@}"
+  docker run --rm -u "$(id -u):$(id -g)" -w /data -v "${CRUDINI_FILE}:${CRUDINI_FILE}" mbentley/crudini "${@}"
 fi
